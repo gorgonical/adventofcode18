@@ -1,0 +1,21 @@
+* Day 6
+Given a list of coordinates, find the largest finite area of points that are
+maximally close on a grid to one coordinate, via the Manhattan distance.
+
+Stated another way, given a list of coordinates on the 2-dimensional cartesian plane,
+color each all vertices on the plane based on which coordinate it is closest
+to. Vertices equally maximally close to two coordinates are uncolored. Find the area
+covered by the largest finite, contiguous collection of same-colored vertices.
+
+Note that this is not a graph coloring problem despite my choice of words, since
+vertices can have neighbors of the same color.
+
+** Strategy 1
+We can restrict the computational area to the smallest rectangle that will enclose
+all coordinates. This is because the points on the perimeter of the rectangle cannot
+have the largest area -- they have infinitely many points maximally close to them.
+
+Then, brute-force the problem, marking all cells based on who they are closest
+to, tabulating the results as you go. This problem should probably be O(m*n*k), where
+m and n are the dimensions of the rectangle you confine the problem to, and k is the
+number of coordinates.
