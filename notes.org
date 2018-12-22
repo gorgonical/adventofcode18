@@ -19,3 +19,9 @@ Then, brute-force the problem, marking all cells based on who they are closest
 to, tabulating the results as you go. This problem should probably be O(m*n*k), where
 m and n are the dimensions of the rectangle you confine the problem to, and k is the
 number of coordinates.
+* Day 7
+We are given a list of steps and their dependencies. Each step only blocks one
+successive step, but one step can have multiple blockers. This is is a DAG.
+
+The challenges will be to construct the DAG and write an algorithm for producing the
+topological ordering. Ties are broken by alphabet.
